@@ -5,6 +5,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -20,6 +21,13 @@ public class Robot extends TimedRobot {
   private String m_autoSelected;
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
 
+  private Drivetrain drivetrain;
+  private XboxController driver;
+  private XboxController operator;
+
+  private Arm arm;
+  private Claw claw;
+
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
@@ -29,6 +37,12 @@ public class Robot extends TimedRobot {
     m_chooser.setDefaultOption("Default Auto", kDefaultAuto);
     m_chooser.addOption("My Auto", kCustomAuto);
     SmartDashboard.putData("Auto choices", m_chooser);
+
+    drivetrain = new Drivetrain(0, 1, 2, 3);
+
+    arm = new Arm (0);
+
+    claw = new Claw (1);
   }
 
   /**
@@ -78,7 +92,29 @@ public class Robot extends TimedRobot {
 
   /** This function is called periodically during operator control. */
   @Override
-  public void teleopPeriodic() {}
+  public void teleopPeriodic() {
+    drivetrain.drive(driver.getLeftY(), driver.getRightY());
+
+    if (operator.getAButton()) {
+      arm.raise();
+
+  
+    } else {
+      arm.lower();
+    }
+
+    if (operator.getBButton()) {
+      claw.open();
+
+
+    } else {
+      claw.close();
+    }
+
+
+  }
+
+
 
   /** This function is called once when the robot is disabled. */
   @Override

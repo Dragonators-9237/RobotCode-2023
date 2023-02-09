@@ -26,5 +26,6 @@
     },
   ],
   "java.test.defaultConfig": "WPIlibUnitTests",
-  "java.import.gradle.java.home": "C:\\Users\\Public\\wpilib\\2023\\jdk\\bin\\"
+  "java.import.gradle.java.home": "C:\\Users\\Public\\wpilib\\2023\\jdk\\",
+  "java.jdt.ls.java.home": "C:\\Users\\Public\\wpilib\\2023\\jdk\\"
 }
