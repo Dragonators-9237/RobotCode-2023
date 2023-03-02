@@ -7,8 +7,8 @@ import edu.wpi.first.wpilibj.PneumaticsModuleType;
 public class Claw {
 
     private Solenoid clawSolenoid;
-    public Claw(int id) {
-         clawSolenoid = new Solenoid(PneumaticsModuleType.REVPH, id);
+    public Claw(int clawId) {
+         clawSolenoid = new Solenoid(PneumaticsModuleType.REVPH, clawId);
     }
 
     public void close() {
@@ -21,5 +21,9 @@ public class Claw {
 
     public void set(boolean on) {
         clawSolenoid.set(on);
+    }
+
+    public void toggle() {
+        clawSolenoid.set(!clawSolenoid.get());
     }
 }
