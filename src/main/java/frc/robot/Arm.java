@@ -7,6 +7,7 @@ import edu.wpi.first.wpilibj.PneumaticsModuleType;
 public class Arm {
     PneumaticHub phA;
     private Solenoid armSolenoidA, armSolenoidB;
+
     public Arm(int extendIdA, int extendIdB) {
         armSolenoidA = new Solenoid(PneumaticsModuleType.REVPH, extendIdA);
         armSolenoidB = new Solenoid(PneumaticsModuleType.REVPH, extendIdB);

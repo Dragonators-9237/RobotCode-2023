@@ -1,14 +1,13 @@
 package frc.robot;
 
-import edu.wpi.first.wpilibj.PneumaticHub;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.PneumaticsModuleType;
 
 public class Claw {
-
     private Solenoid clawSolenoid;
+
     public Claw(int clawId) {
-         clawSolenoid = new Solenoid(PneumaticsModuleType.REVPH, clawId);
+        clawSolenoid = new Solenoid(PneumaticsModuleType.REVPH, clawId);
     }
 
     public void close() {

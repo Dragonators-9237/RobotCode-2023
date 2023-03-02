@@ -12,8 +12,8 @@ public class Drivetrain {
     DifferentialDrive drive;
 
     public Drivetrain(int leftMotor1Channel, int leftMotor2Channel, int rightMotor1Channel, int rightMotor2Channel) {
-        leftMotor1 = new PWMSparkMax (leftMotor1Channel);
-        leftMotor2 = new PWMSparkMax (leftMotor2Channel);
+        leftMotor1 = new PWMSparkMax(leftMotor1Channel);
+        leftMotor2 = new PWMSparkMax(leftMotor2Channel);
         rightMotor1 = new PWMSparkMax(rightMotor1Channel);
         rightMotor2 = new PWMSparkMax(rightMotor2Channel);
 
